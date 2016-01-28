@@ -25,6 +25,7 @@ gulp.task('vendor', function() {
 		'./node_modules/systemjs/dist/system.src.js',
 		'./node_modules/rxjs/bundles/Rx.js',
 		'./node_modules/angular2/bundles/angular2.dev.js',
+		'./node_modules/angular2/bundles/router.dev.js',
 	]).pipe(gulp.dest('./build/vendor/'));
 });
 
@@ -81,7 +82,6 @@ gulp.task('http-server', function() {
 });
 
 gulp.task('watch', function() {
-	gulp.run('less');
 	gulp.run('jade');
 	gulp.run('images');
 	gulp.run('js');
@@ -92,7 +92,6 @@ gulp.task('watch', function() {
 	server.listen(35729, function(err) {
 		if (err) return console.log(err);
 
-		gulp.watch('src/less/**/*.less', ['less']);
 		gulp.watch('src/jade/**/*.jade', ['jade']);
 		gulp.watch('src/img/**/*', ['images']);
 		gulp.watch('src/js/**/*', ['js']);
