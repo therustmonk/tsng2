@@ -1,6 +1,6 @@
 import {Component} from 'angular2/core';
 import {RouteConfig, ROUTER_DIRECTIVES} from 'angular2/router';
-import {MainPage} from './main';
+import {HomePage} from './home';
 
 @Component({
 	selector: 'app',
@@ -9,7 +9,7 @@ import {MainPage} from './main';
 })
 
 @RouteConfig([
-	{path: '/main', name: 'Main', component: MainPage, useAsDefault: true},
+	{path: '/home', name: 'Home', component: HomePage, useAsDefault: true},
 ])
 
 export class AppComponent {

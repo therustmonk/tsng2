@@ -52,6 +52,12 @@ gulp.task('ts', function() {
 	  .pipe(livereload(server));	
 });
 
+gulp.task('electron', function() {
+	gulp.src(['./src/electron/**/*'])
+		.pipe(gulp.dest('./build'))
+		.pipe(livereload(server));
+});
+
 gulp.task('images', function() {
 	gulp.src('./src/img/**/*')
 		.pipe(imagemin())
@@ -81,13 +87,9 @@ gulp.task('http-server', function() {
 	console.log('Server listening on http://localhost:9000');
 });
 
+// Use watch to continious building
 gulp.task('watch', function() {
-	gulp.run('pug');
-	gulp.run('images');
-	gulp.run('js');
-	gulp.run('ts');
-	gulp.run('vendor');
-	gulp.run('sass');
+	gulp.run('build');
 
 	server.listen(35729, function(err) {
 		if (err) return console.log(err);
@@ -96,33 +98,21 @@ gulp.task('watch', function() {
 		gulp.watch('src/img/**/*', ['images']);
 		gulp.watch('src/js/**/*', ['js']);
 		gulp.watch('src/ts/**/*', ['ts']);
+		gulp.watch('src/electron/**/*', ['electron']);
 		gulp.watch('src/scss/{,*/}*.{scss,sass}', ['sass']);
 	});
 	gulp.run('http-server');
 });
 
+// Not ready...
 gulp.task('build', function() {
-	// css
-	/*
-	gulp.src('./src/less/screen.styl')
-		.pipe(less({
-			use: ['nib']
-		}))
-	.pipe(csso())
-	.pipe(gulp.dest('./build/css/'));
-	*/
+	gulp.run('pug');
+	gulp.run('images');
+	gulp.run('js');
+	gulp.run('ts');
+	gulp.run('electron');
+	gulp.run('vendor');
+	gulp.run('sass');
 
-	gulp.src(['./src/pug/*.pug', '!./src/pug/_*.pug'])
-		.pipe(pug())
-		.pipe(gulp.dest('./build/'));
-
-	gulp.src(['./src/js/**/*.js', '!./src/js/vendor/**/*.js'])
-		.pipe(concat('index.js'))
-		.pipe(uglify())
-		.pipe(gulp.dest('./build/js'));
-
-	gulp.src('./src/img/**/*')
-		.pipe(imagemin())
-		.pipe(gulp.dest('./build/img'));
-
+	// TODO Minify, uglify, etc.
 });

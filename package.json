@@ -4,11 +4,12 @@
   "description": "TypeScript + Angular 2 Minimal Project",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "electron build/",
+    "desktop": "electron-packager build/ --platform=win32 --arch=x64"
   },
-  "repository" : {
-    "type" : "git",
-    "url" : "https://github.com/DenisKolodin/tsng2"
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/DenisKolodin/tsng2"
   },
   "author": "Denis Kolodin",
   "license": "MIT",
@@ -17,13 +18,15 @@
     "compass-mixins": "^0.12.7",
     "connect": "^3.4.1",
     "connect-livereload": "^0.5.4",
+    "electron-packager": "^7.0.2",
+    "electron-prebuilt": "^1.1.0",
     "gulp": "^3.9.1",
     "gulp-compass": "^2.1.0",
     "gulp-concat": "^2.6.0",
     "gulp-csso": "^2.0.0",
     "gulp-imagemin": "^3.0.1",
-    "gulp-pug": "^3.0.2",
     "gulp-livereload": "^3.8.1",
+    "gulp-pug": "^3.0.2",
     "gulp-sass": "^2.3.1",
     "gulp-sourcemaps": "^1.6.0",
     "gulp-typescript": "^2.13.4",

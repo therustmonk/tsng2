@@ -1,6 +1,6 @@
 System.config({
 	map: {
-		ts: '/ts',
+		ts: 'ts',
 	},
 	packages: {
 		ts: {
