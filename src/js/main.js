@@ -3,6 +3,7 @@ const electron = require('electron');
 const {app} = electron;
 // Module to create native browser window.
 const {BrowserWindow} = electron;
+const {ipcMain} = electron;
 
 // Keep a global reference of the window object, if you don't, the window will
 // be closed automatically when the JavaScript object is garbage collected.
@@ -22,7 +23,7 @@ function createWindow() {
   win.loadURL(`file://${__dirname}/../index.html`);
 
   // Open the DevTools.
-  // win.webContents.openDevTools();
+  win.webContents.openDevTools();
 
   // Emitted when the window is closed.
   win.on('closed', () => {
@@ -57,3 +58,14 @@ app.on('activate', () => {
 
 // In this file you can include the rest of your app's specific main process
 // code. You can also put them in separate files and require them here.
+
+// Ipc listening in main process.
+ipcMain.on('asynchronous-message', (event, arg) => {
+  console.log(arg);  // prints "ping"
+  event.sender.send('asynchronous-reply', 'async pong');
+});
+
+ipcMain.on('synchronous-message', (event, arg) => {
+  console.log(arg);  // prints "ping"
+  event.returnValue = 'sync pong';
+});
