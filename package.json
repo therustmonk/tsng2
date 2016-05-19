@@ -1,11 +1,11 @@
 {
   "name": "tsng2",
-  "version": "0.1.17",
-  "description": "TypeScript + Angular 2 Minimal Project",
+  "version": "0.2.1",
+  "description": "TypeScript + Angular 2 + Electron Minimal Project",
   "main": "index.js",
   "scripts": {
     "start": "electron build/",
-    "desktop": "electron-packager build/ --platform=win32 --arch=x64"
+    "desktop": "electron-packager build/ --all"
   },
   "repository": {
     "type": "git",

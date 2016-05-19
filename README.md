@@ -1,6 +1,6 @@
 ## TSNG2
 
-Minimal Boilerplate with TypeScript + Angular 2 (+ Electron optional)
+Minimal Boilerplate with TypeScript + Angular 2 + Electron (optional)
 
 Use it to bootstrap your project.
 
@@ -22,6 +22,12 @@ Your sources will compiles automatically. Now, use browser to get the result:
 http://localhost:9000/
 
 ### Electron
+
+At first, build the project:
+
+```sh
+$ gulp build
+```
 
 To start project as desktop (electron) app use:
 
