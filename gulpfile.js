@@ -20,9 +20,10 @@ gulp.task("libs", () => {
 });
 
 gulp.task('styles', () => {
-	var postcss     = require('gulp-postcss');
-	var autoreset   = require('postcss-autoreset');
-	var simplevars  = require('postcss-simple-vars');
+	var postcss      = require('gulp-postcss');
+	var autoreset    = require('postcss-autoreset');
+	var simplevars   = require('postcss-simple-vars');
+	var nested       = require('postcss-nested');
 	var lost         = require('lost');
 	var autoprefixer = require('autoprefixer');
 	var processors = [
@@ -34,6 +35,7 @@ gulp.task('styles', () => {
 			},
 		}),
 		simplevars(),
+		nested(),
 		lost(),
 		autoprefixer({
 			browsers: ['last 2 versions'],

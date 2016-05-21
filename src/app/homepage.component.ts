@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import {NgIf} from '@angular/common';
+import { NgIf } from '@angular/common';
 import { ipcRenderer } from 'electron';
 
 @Component({

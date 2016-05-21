@@ -52,6 +52,7 @@
     "npm-run-all": "^2.1.1",
     "postcss-autoreset": "^1.1.5",
     "postcss-cli": "^2.5.2",
+    "postcss-nested": "^1.0.0",
     "postcss-simple-vars": "^2.0.0",
     "pug": "^2.0.0-alpha7",
     "pug-cli": "^1.0.0-alpha5",
