@@ -12,31 +12,28 @@ To install dependencies run with shell:
 $ npm install
 ```
 
-When dependencies will be installed use builder to start:
+When dependencies will be installed use gulp to build:
 
 ```sh
-$ gulp watch
+$ npm run build
 ```
 
-Your sources will compiles automatically. Now, use browser to get the result:
-http://localhost:9000/
+To start lite server to test use:
+
+```sh
+$ npm run try-web
+```
 
 ### Electron
-
-At first, build the project:
-
-```sh
-$ gulp build
-```
 
 To start project as desktop (electron) app use:
 
 ```sh
-$ npm start
+$ npm run try-electron
 ```
 
 And to pack native release use:
 
 ```sh
-$ npm run-script desktop
+$ npm run pack-electron
 ```

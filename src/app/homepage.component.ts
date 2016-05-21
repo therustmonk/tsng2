@@ -1,14 +1,14 @@
-import {Component} from 'angular2/core';
-import {NgIf} from 'angular2/common';
-import {ipcRenderer} from 'electron';
+import { Component } from '@angular/core';
+import {NgIf} from '@angular/common';
+import { ipcRenderer } from 'electron';
 
 @Component({
-	selector: 'home',
-	templateUrl: 'home.html',
+	selector: 'homepage',
+	templateUrl: './app/homepage.html',
 	directives: [NgIf],
 })
 
-export class HomePage {
+export class HomePageComponent {
 
 	private has_ipc: boolean;
 
@@ -36,3 +36,4 @@ export class HomePage {
 	}
 
 }
+
