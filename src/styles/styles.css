@@ -1,0 +1,9 @@
+$font: "Trebuchet MS", Helvetica, sans-serif;
+
+body {
+	background: rgba(169,3,41,1);
+	background: linear-gradient(to right, rgba(169,3,41,1) 0%, rgba(143,2,34,1) 44%, rgba(109,0,25,1) 100%);
+	font-family: $font;
+	color: white;
+	padding: 10px;
+}

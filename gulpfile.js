@@ -1,8 +1,4 @@
 var gulp = require('gulp');
-var ts = require('gulp-typescript');
-var pug = require('gulp-pug');
-var postcss = require('gulp-postcss');
-
 
 var dependencies = [
 	'es6-shim/es6-shim.min.js',
@@ -24,14 +20,24 @@ gulp.task("libs", () => {
 });
 
 gulp.task('styles', () => {
+	var postcss     = require('gulp-postcss');
+	var autoreset   = require('postcss-autoreset');
+	var simplevars  = require('postcss-simple-vars');
+	var lost         = require('lost');
+	var autoprefixer = require('autoprefixer');
 	var processors = [
-		require('postcss-autoreset')({
+		autoreset({
 			reset: {
 				margin: 0,
 				padding: 0,
 				borderRadius: 0,
-			}
-		})
+			},
+		}),
+		simplevars(),
+		lost(),
+		autoprefixer({
+			browsers: ['last 2 versions'],
+		}),
 	];
 	return gulp.src('./src/styles/*.css')
 		.pipe(postcss(processors))
@@ -39,6 +45,7 @@ gulp.task('styles', () => {
 });
 
 gulp.task('app', () => {
+	var ts = require('gulp-typescript');
 	var project = ts.createProject('tsconfig.json');
 	return project.src()
 		.pipe(ts(project))
@@ -46,6 +53,7 @@ gulp.task('app', () => {
 });
 
 gulp.task('templates', () => {
+	var pug  = require('gulp-pug');
 	return gulp.src(['./src/templates/**/*.pug'])
 		.pipe(pug({
 			pretty: true
