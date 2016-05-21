@@ -25,7 +25,7 @@ gulp.task('styles', () => {
 	var simplevars   = require('postcss-simple-vars');
 	var nested       = require('postcss-nested');
 	var lost         = require('lost');
-	var autoprefixer = require('autoprefixer');
+	var cssnext      = require('postcss-cssnext');
 	var processors = [
 		autoreset({
 			reset: {
@@ -37,9 +37,7 @@ gulp.task('styles', () => {
 		simplevars(),
 		nested(),
 		lost(),
-		autoprefixer({
-			browsers: ['last 2 versions'],
-		}),
+		cssnext(),
 	];
 	return gulp.src('./src/styles/*.css')
 		.pipe(postcss(processors))

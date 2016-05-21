@@ -40,7 +40,6 @@
     "angular2-in-memory-web-api": "0.0.7"
   },
   "devDependencies": {
-    "autoprefixer": "^6.3.6",
     "electron-packager": "^7.0.2",
     "electron-prebuilt": "^1.1.0",
     "gulp": "^3.9.1",
@@ -52,6 +51,7 @@
     "npm-run-all": "^2.1.1",
     "postcss-autoreset": "^1.1.5",
     "postcss-cli": "^2.5.2",
+    "postcss-cssnext": "^2.5.2",
     "postcss-nested": "^1.0.0",
     "postcss-simple-vars": "^2.0.0",
     "pug": "^2.0.0-alpha7",
