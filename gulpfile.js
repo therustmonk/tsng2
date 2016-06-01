@@ -9,9 +9,18 @@ var dependencies = [
 	'@angular/**/*.js',
 ];
 
+var modules = [
+	// Example: 'iconv-lite/**/*',
+];
+
 gulp.task("resources", () => {
 	return gulp.src(["src/resources/**/*"])
 		.pipe(gulp.dest("./build/"))
+});
+
+gulp.task("modules", () => {
+	return gulp.src(modules, {cwd: "node_modules/**"})
+		.pipe(gulp.dest("./build/node_modules/"));
 });
 
 gulp.task("libs", () => {
@@ -62,7 +71,7 @@ gulp.task('templates', () => {
 	.pipe(gulp.dest('./build/'))
 });
 
-gulp.task('build', ['templates', 'resources', 'styles', 'app', 'libs'], () => {
+gulp.task('build', ['templates', 'resources', 'styles', 'app', 'libs', 'modules'], () => {
 });
 
 gulp.task('watch', ['build'], () => {
