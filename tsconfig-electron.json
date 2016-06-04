@@ -12,6 +12,7 @@
   },
   "exclude": [
     "node_modules",
+    "src/app",
     "typings/main",
     "typings/main.d.ts"
   ]

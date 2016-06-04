@@ -53,12 +53,20 @@ gulp.task('styles', () => {
 		.pipe(gulp.dest('./build/'));
 });
 
-gulp.task('app', () => {
+gulp.task('ts-app', () => {
 	var ts = require('gulp-typescript');
-	var project = ts.createProject('tsconfig.json');
+	var project = ts.createProject('tsconfig-app.json');
 	return project.src()
 		.pipe(ts(project))
 		.pipe(gulp.dest('./build/app'));
+});
+
+gulp.task('ts-electron', () => {
+	var ts = require('gulp-typescript');
+	var project = ts.createProject('tsconfig-electron.json');
+	return project.src()
+		.pipe(ts(project))
+		.pipe(gulp.dest('./build/electron'));
 });
 
 gulp.task('templates', () => {
@@ -71,8 +79,9 @@ gulp.task('templates', () => {
 	.pipe(gulp.dest('./build/'))
 });
 
-gulp.task('build', ['templates', 'resources', 'styles', 'app', 'libs', 'modules'], () => {
-});
+gulp.task('ts', ['ts-app', 'ts-electron']);
+
+gulp.task('build', ['templates', 'resources', 'styles', 'ts', 'libs', 'modules']);
 
 gulp.task('watch', ['build'], () => {
 	gulp.watch('./src/app/**/*', ['app']);
