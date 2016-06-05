@@ -1,4 +1,5 @@
 var gulp = require('gulp');
+var uglify = require('gulp-uglify');
 
 var dependencies = [
 	'es6-shim/es6-shim.min.js',
@@ -58,6 +59,7 @@ gulp.task('ts-app', () => {
 	var project = ts.createProject('tsconfig-app.json');
 	return project.src()
 		.pipe(ts(project))
+		.pipe(uglify())
 		.pipe(gulp.dest('./build/app'));
 });
 
@@ -66,6 +68,7 @@ gulp.task('ts-electron', () => {
 	var project = ts.createProject('tsconfig-electron.json');
 	return project.src()
 		.pipe(ts(project))
+		.pipe(uglify())
 		.pipe(gulp.dest('./build/electron'));
 });
 

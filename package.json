@@ -46,6 +46,7 @@
     "gulp-postcss": "^6.1.1",
     "gulp-pug": "^3.0.2",
     "gulp-typescript": "^2.13.4",
+    "gulp-uglify": "^1.5.3",
     "lite-server": "^2.2.0",
     "lost": "^6.8.0",
     "npm-run-all": "^2.1.1",
