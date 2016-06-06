@@ -87,7 +87,8 @@ gulp.task('ts', ['ts-app', 'ts-electron']);
 gulp.task('build', ['templates', 'resources', 'styles', 'ts', 'libs', 'modules']);
 
 gulp.task('watch', ['build'], () => {
-	gulp.watch('./src/app/**/*', ['app']);
+	gulp.watch('./src/app/**/*', ['ts-app']);
+	gulp.watch('./src/electron/**/*', ['ts-electron']);
 	gulp.watch('./src/resources/**/*', ['resources']);
 	gulp.watch('./src/styles/**/*', ['styles']);
 	gulp.watch('./src/templates/**/*', ['templates']);
