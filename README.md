@@ -29,7 +29,7 @@ $ npm run try-web
 To start project as desktop (electron) app use:
 
 ```sh
-$ npm run try-electron
+$ npm run try-desktop
 ```
 
 And to pack native release use:
