@@ -1,7 +1,7 @@
 {
   "globalDependencies": {
-    "es6-shim": "registry:dt/es6-shim#0.31.2+20160317120654",
-    "github-electron": "registry:dt/github-electron#0.37.8+20160509083739",
-    "node": "registry:dt/node#6.0.0+20160514165920"
+    "core-js": "registry:dt/core-js#0.0.0+20160602141332",
+    "github-electron": "registry:dt/github-electron#1.2.5+20160624085047",
+    "node": "registry:dt/node#6.0.0+20160709114037"
   }
 }
