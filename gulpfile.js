@@ -2,12 +2,13 @@ var gulp = require('gulp');
 var uglify = require('gulp-uglify');
 
 var dependencies = [
-	'es6-shim/es6-shim.min.js',
+	'core-js/client/*.min.js',
 	'zone.js/dist/zone.js',
 	'reflect-metadata/Reflect.js',
 	'systemjs/dist/system.src.js',
 	'rxjs/**/*.js',
 	'@angular/**/*.js',
+	'angular2-in-memory-web-api/*.js',
 ];
 
 var modules = [
