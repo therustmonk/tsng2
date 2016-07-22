@@ -37,3 +37,18 @@ And to pack native release use:
 ```sh
 $ npm run pack-desktop
 ```
+
+### Building
+
+This boilerplate uses gulp to build. Watch command is also available if you develop it continiously:
+
+```sh
+gulp watch
+```
+
+Minification is turned off by default. Use `--minify` flag to activate it:
+
+```sh
+gulp build --minify
+```
+

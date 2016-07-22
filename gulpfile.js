@@ -1,4 +1,6 @@
+var argv = require('yargs').argv;
 var gulp = require('gulp');
+var gulpif = require('gulp-if');
 var uglify = require('gulp-uglify');
 
 var dependencies = [
@@ -60,7 +62,7 @@ gulp.task('ts-app', () => {
 	var project = ts.createProject('tsconfig-app.json');
 	return project.src()
 		.pipe(ts(project))
-		.pipe(uglify())
+		.pipe(gulpif(argv.minify, uglify()))
 		.pipe(gulp.dest('./build/app'));
 });
 
@@ -69,7 +71,7 @@ gulp.task('ts-electron', () => {
 	var project = ts.createProject('tsconfig-electron.json');
 	return project.src()
 		.pipe(ts(project))
-		.pipe(uglify())
+		.pipe(gulpif(argv.minify, uglify()))
 		.pipe(gulp.dest('./build/electron'));
 });
 
