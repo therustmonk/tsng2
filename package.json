@@ -8,6 +8,7 @@
     "postinstall": "typings install",
     "build": "gulp build",
     "clean": "shx rm -Rf build/",
+    "gulp": "gulp",
     "tsc": "tsc",
     "typings": "typings",
     "lite": "lite-server",
