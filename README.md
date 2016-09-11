@@ -43,12 +43,12 @@ $ npm run pack-desktop
 This boilerplate uses gulp to build. Watch command is also available if you develop it continiously:
 
 ```sh
-gulp watch
+npm run gulp watch
 ```
 
 Minification is turned off by default. Use `--minify` flag to activate it:
 
 ```sh
-gulp build --minify
+npm run gulp build --minify
 ```
 
